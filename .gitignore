@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+secret.key
+cert.pem
+key.pem
+logs/*.log
+encrypted_files/*
+!encrypted_files/.gitkeep

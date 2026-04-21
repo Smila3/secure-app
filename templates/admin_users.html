@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Manage Users{% endblock %}
+{% block content %}
+  <h2>Manage Users</h2>
+
+  <ul>
+    {% for u in users %}
+      <li>
+        <strong>{{ u.username }}</strong> - {{ u.email }} - current role: {{ u.role }}
+
+        <form method="POST" action="{{ url_for('update_user_role') }}" class="inline-form">
+          <input type="hidden" name="user_id" value="{{ u.id }}">
+          <select name="role">
+            <option value="admin" {% if u.role == "admin" %}selected{% endif %}>Admin</option>
+            <option value="user" {% if u.role == "user" %}selected{% endif %}>User</option>
+            <option value="guest" {% if u.role == "guest" %}selected{% endif %}>Guest</option>
+          </select>
+          <button type="submit">Update Role</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

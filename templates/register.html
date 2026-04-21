@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+  <h2>Register</h2>
+  <form method="POST">
+    <label>Username</label>
+    <input type="text" name="username" required>
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Password</label>
+    <input type="password" name="password" required>
+
+    <label>Confirm Password</label>
+    <input type="password" name="confirm_password" required>
+
+    <label for="account_type">Choose account type</label>
+    <select name="account_type" id="account_type" required>
+      <option value="user">User - I want to upload and manage my own files</option>
+      <option value="guest">Guest - I only need access to shared files</option>
+    </select>
+
+    <button type="submit">Create Account</button>
+  </form>
+{% endblock %}

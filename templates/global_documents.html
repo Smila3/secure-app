@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Global Documents{% endblock %}
+{% block content %}
+  <h2>Public Documents</h2>
+  
+  {% if global_docs %}
+    <ul>
+      {% for doc in global_docs %}
+        <li>
+          {{ doc.original_name }}
+          - <a href="{{ url_for('view_file', doc_id=doc.id) }}">View</a>
+          - <a href="{{ url_for('download', doc_id=doc.id) }}">Download</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No public documents available.</p>
+  {% endif %}
+
+  {% if user %}
+    <p><a href="{{ url_for('dashboard') }}">Back to dashboard</a></p>
+  {% else %}
+    <p><a href="{{ url_for('login') }}">Log in</a></p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Access Denied</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="error-page">
+    <h1>403</h1>
+    <p class="error-message">Access Denied</p>
+    <p class="error-description">Sorry, you don't have permission to access this resource.</p>
+    <a href="{{ url_for('dashboard') }}" class="error-link">Go to Dashboard</a>
+  </div>
+  
+  <div class="error-image-container">
+    <img src="{{ url_for('static', filename='images/kuma2.png') }}" alt="Access Denied" class="error-image">
+  </div>
+</body>
+</html>

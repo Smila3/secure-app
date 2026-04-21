@@ -1,0 +1,334 @@
+/* Spring Color Palette */
+:root {
+  --primary-color: #10b981; /* Fresh green */
+  --secondary-color: #d9d472; /* Soft pink */
+  --accent-color: #fbbf24; /* Soft yellow/gold */
+  --text-dark: #1f2937; /* Dark gray */
+  --text-light: #6b7280; /* Light gray */
+  --background-light: #f0fdf4; /* Very light green */
+  --border-color: #d1fae5; /* Light mint */
+}
+
+body {
+  font-family: Helvetica;
+  margin: 0;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  color: var(--text-dark);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+nav {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--primary-color);
+  text-align: center;
+}
+
+nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-right: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+.btn-small {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.5rem;
+  margin: 0;
+}
+
+nav button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-right: 1rem;
+}
+
+nav button:hover {
+  background-color: var(--secondary-color);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  margin: 2rem 0;
+  background: linear-gradient(135deg, #76d59c 0%, #8cdcc1 100%);
+  border-radius: 8px;
+  color: white;
+}
+
+.hero h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.hero .tagline {
+  margin: 0;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.container {
+  max-width: 120px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+form.inline-form {
+  display: inline;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  gap: 1rem;
+  margin: 2rem auto;
+  background-color: var(--background-light);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.1);
+}
+
+.nav-form {
+  display: inline;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+}
+
+form input,
+form select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+label {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: white;
+  color: var(--text-dark);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+select:hover {
+  border-color: var(--secondary-color);
+}
+
+select {
+  background-color: #c6e8c5;
+  color: white;
+  padding: 35px 10mm;
+  border-radius: 10px;
+}
+
+option {
+  background-color: #ffffff;
+  color: white;
+}
+
+select option {
+  color: var(--text-dark);
+  background-color: white;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-0.5px);
+  
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.inline-form button[type="submit"] {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.inline-form button[type="submit"]:hover {
+  color: var(--secondary-color);
+  transform: none;
+}
+
+.inline-form select {
+  width: auto;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  background-color: #c6e8c5;
+  color: var(--text-dark);
+}
+
+ul li {
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-image {
+  position: fixed;
+  bottom: 1mm;
+  right: 1mm;
+  z-index: 3;
+}
+
+.dashboard-image img {
+  max-width: 25mm;
+  height: auto;
+  opacity: 0.9;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.error-page {
+  background-color: #ffffff; 
+  padding: 4rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 600px;
+  border: 2px solid #f1b7f1;
+}
+
+.error-page h1 {
+  font-size: 4rem;
+  color: #d38adb;
+  margin: 0;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin: 1rem 0;
+}
+
+.error-description {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.error-link {
+  display: inline-block;
+  background-color: #d08bcc;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.error-link:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.error-image-container {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.error-image {
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.error-image:hover {
+  transform: scale(1.05);
+}

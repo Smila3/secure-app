@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <h2>Dashboard</h2>
+  <p>Welcome, {{ user.username }}.</p>
+
+  {% if user.role != "guest" %}
+    <p><a href="{{ url_for('upload') }}">Upload a document</a></p>
+  {% endif %}
+
+  <h3>My Documents</h3>
+  <ul>
+    {% for doc in owned_docs %}
+      <li>
+        {{ doc.original_name }}
+        - <a href="{{ url_for('view_file', doc_id=doc.id) }}">View</a>
+        - <a href="{{ url_for('download', doc_id=doc.id) }}">Download</a>
+        - <a href="{{ url_for('share', doc_id=doc.id) }}">Share</a>
+        - <a href="{{ url_for('upload_new_version', doc_id=doc.id) }}">Upload New Version</a>
+        - <form action="{{ url_for('remove_document', doc_id=doc.id) }}" method="POST" class="inline-form" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    {% else %}
+      <li>No documents yet.</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Shared With Me</h3>
+  <ul>
+    {% for item in shared_docs %}
+      <li>
+        {{ item.doc.original_name }} ({{ item.role }})
+        - <a href="{{ url_for('view_file', doc_id=item.doc.id) }}">View</a>
+        - <a href="{{ url_for('download', doc_id=item.doc.id) }}">Download</a>
+
+        {% if item.role == "editor" or user.role == "admin" %}
+          - <a href="{{ url_for('upload_new_version', doc_id=item.doc.id) }}">Upload New Version</a>
+        {% endif %}
+
+        {% if user.role == "admin" %}
+          - <form action="{{ url_for('remove_document', doc_id=doc.id) }}" method="POST" class="inline-form" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        {% endif %}
+      </li>
+    {% else %}
+      <li>No shared documents.</li>
+    {% endfor %}
+  </ul>
+
+  <div class="dashboard-image">
+    <img src="{{ url_for('static', filename='css/images/kuma1.png') }}" alt="Cute bear">
+  </div>
+{% endblock %}

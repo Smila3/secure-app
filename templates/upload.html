@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Upload{% endblock %}
+{% block content %}
+  <h2>Upload Document</h2>
+
+  {% if user and user.role == "guest" %}
+    <p>You do not have permission to upload files as a guest.</p>
+    <p><a href="{{ url_for('dashboard') }}">Back to dashboard</a></p>
+  {% else %}
+    <form method="POST" enctype="multipart/form-data">
+      <label for="document">Choose file</label>
+      <input type="file" name="document" id="document" required>
+      <button type="submit">Upload</button>
+    </form>
+  {% endif %}
+{% endblock %}
